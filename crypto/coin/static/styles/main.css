@@ -1,0 +1,120 @@
+body {
+    background-image: url('/static/10078.jpg');
+    background-size: cover; /* Ajusta la imagen al tamaño de la pantalla */
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Fija el fondo en su posición mientras la página se desplaza */
+    background-position: center; /* Centra la imagen */
+    font-family: Arial, sans-serif; /* Añade una fuente predeterminada */
+    margin: 0; /* Elimina el margen predeterminado */
+    padding: 0; /* Elimina el relleno predeterminado */
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+  }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+    grid-gap: 50px;
+    justify-items: center;   
+    margin-top: 70px; 
+  }
+
+  .grid-item img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .grid-item img:hover {
+    transform: scale(1.5);
+  }
+
+  /* Estilos para el menú */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 10px 0;
+    overflow-x: auto; /* Oculta el desbordamiento horizontal */
+    -webkit-overflow-scrolling: touch; /* Agrega desplazamiento suave en iOS */
+  }
+
+  nav a {
+    margin: 5px 5px; 
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 5px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+  }
+
+  nav a:hover {
+    background-color: #ddd;
+  }
+
+  /* Estilos para hacer el menú responsive */
+  @media screen and (max-width: 600px) {
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+    }
+    nav a {
+      margin: 5px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .toggle-menu {
+      display: block;
+      text-align: center;
+      background-color: #f0f0f0;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+  .toggle-menu:hover {
+    background-color: #ddd;
+  }
+
+  .toggle-menu:after {
+    content: "\2630";
+    float: right;
+    font-size: 20px;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  .hidden-menu {
+    display: none;
+  }
+
+  .hidden-menu a {
+    display: block;
+    margin: 5px 0;
+  }
+}

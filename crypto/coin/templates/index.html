@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    {% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'styles/main.css' %}">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galería de Criptomonedas</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+
+  <button class="toggle-menu" onclick="toggleMenu()">Menú</button>
+  
+  <div class="container hidden-menu" id="hiddenMenu">
+    <nav>
+    {% for image_path in image_paths %}
+        <a href="#{{image_path}}"><i class="fab fa-{{image_path|lower }}"></i>{{image_path}}</a>
+    {% endfor %}  
+  </nav>
+  </div>
+      
+      <div class="container">
+        <h1>Galería de Criptomonedas</h1>
+        <div class="grid-container">    
+          {% for image_path in image_paths %}
+          <div class="grid-item">
+              <img src= "{% static 'graphs/' %}{{ image_path }}.png" frameborder="0" scrolling="no" id="{{ image_path }}">
+          </div>
+          {% endfor %}
+      </div>
+      </div>
+    </body>
+    <script>
+      function toggleMenu() {
+        var hiddenMenu = document.getElementById("hiddenMenu");
+        if (hiddenMenu.style.display === "none") {
+          hiddenMenu.style.display = "block";
+        } else {
+          hiddenMenu.style.display = "none";
+        }
+      }
+      </script>
+</html>

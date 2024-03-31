@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    {% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'styles/main.css' %}">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galería de Criptomonedas</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Galería de Criptomonedas</h1>
+        <div class="grid-container">    
+            {% for image_path in image_paths %}
+            <div class="grid-item">
+                <img src="{{ image_path }}" frameborder="0" scrolling="no" alt="{{ image_path }}">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
